@@ -1,11 +1,11 @@
 FROM ayiinxd/ayiin-userbot:buster
+#AyiinXd
+RUN git clone -b AyiinUbot https://github.com/YinsXd/AyiinUbot /home/ayiinubot/ \
+    && chmod 777 /home/ayiinubot \
+    && mkdir /home/ayiinubot/bin/
 
-RUN git clone -b Yins-Userbot https://github.com/YinsXd/Yins-Userbot /home/yinsuserbot/ \
-    && chmod 777 /home/yinsuserbot \
-    && mkdir /home/yinsuserbot/bin/
+COPY ./sample_config.env ./config.env* /home/ayiinubot/
 
-COPY ./sample_config.env ./config.env* /home/yinsuserbot/
-
-WORKDIR /home/yinsuserbot/
+WORKDIR /home/ayiinubot/
 
 CMD ["bash","start"]
